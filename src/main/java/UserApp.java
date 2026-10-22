@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.io.*;
 import java.io.IOException;
@@ -23,11 +24,11 @@ public class UserApp {
                 User user = new User(parts[0], parts[1]);
                 lst.add(user);
             } catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
+                System.out.println(parts[0] + " " + parts[1] + " " + e.getMessage());
             }
         }
 
-        lst.sort((u1,u2)-> u1.getEmail().compareTo(u2.getEmail()));
+        lst.sort(Comparator.comparing(User::getEmail));
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
 
             for (User user : lst) {
