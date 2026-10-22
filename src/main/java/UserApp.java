@@ -29,7 +29,7 @@ public class UserApp {
         }
 
         lst.sort(Comparator.comparing(User::getEmail));
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("out.txt"))) {
 
             for (User user : lst) {
                 writer.write(user.getEmail() + " " + user.getPass());
