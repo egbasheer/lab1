@@ -34,7 +34,6 @@ public class UserApp {
                 writer.write(user.getEmail() + " " + user.getPass());
                 writer.newLine();
             }
-
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
