@@ -1,3 +1,5 @@
+package org.example.demo;
+
 public class User {
     private String email;
     private String pass;
